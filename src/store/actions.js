@@ -5,5 +5,11 @@ export default{
             'https://jsonplaceholder.typicode.com/posts?_limit=5'
         )
         commit('getPosts', response.data);
+    },
+    async addPostAction({commit}, post){
+        const response = await axios.post(
+            'https://jsonplaceholder.typicode.com/Posts', post
+        )
+        commit('insertPost', response.data)
     }
 }
