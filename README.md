@@ -109,3 +109,21 @@ add src/components/AddPost.vue
 
 update App.vue, add add-post tag
 update Posts.vue
+
+## Step 6, Delete Data
+
+update Posts.vue : add delete button
+
+```html
+<div class="mt-3">
+    <b-button-group size="sm">
+        <b-button @click="removePostAction(p.id)" variant="danger">Delete</b-button>
+    <b-button-group>
+</div>
+```
+
+update action.js
+- async removePostAction({commit}, id)
+
+update mutations.js
+- deletePost: (state, id) => state.posts.filter(c => c.id !== id)

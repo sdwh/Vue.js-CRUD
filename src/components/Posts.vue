@@ -7,6 +7,12 @@
                 Title: {{p.title}} <br/>
                 <hr />
                 Content: {{p.body}}
+                <div class="mt-3">
+                    <b-button-group size="sm">
+                        <b-button @click="removePostAction(p.id)" variant="danger">Delete</b-button>
+                        <b-button variant="info">Edit</b-button>
+                    </b-button-group>
+                </div>
             </b-list-group-item>
         </b-list-group>
     </div>
@@ -17,7 +23,7 @@
     export default {
         name: 'Posts',
         computed: mapGetters(["getAllPosts"]),
-        methods: mapActions(["getPostsAction"]),
+        methods: mapActions(["getPostsAction", "removePostAction"]),
         created(){
             this.getPostsAction();
         }

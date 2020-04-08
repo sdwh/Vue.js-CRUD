@@ -11,5 +11,9 @@ export default{
             'https://jsonplaceholder.typicode.com/Posts', post
         )
         commit('insertPost', response.data)
+    },
+    async removePostAction({commit}, id){
+        await axios.delete(`https://jsonplaceholder.typicode.com/Posts/${id}`);
+        commit('deletePost', id);
     }
 }
