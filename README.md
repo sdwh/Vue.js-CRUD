@@ -127,3 +127,27 @@ update action.js
 
 update mutations.js
 - deletePost: (state, id) => state.posts.filter(c => c.id !== id)
+
+## Step 7, Vue Router
+
+```batch
+npm install vue-router
+```
+
+update main.js : to user router object
+
+add components\Home.vue : add routing anchor link
+
+update components\App.vue : add router-link tag
+
+```html
+<div id="nav">
+    <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link>
+</div>
+```
+
+add components\About.vue
+
+add src\router.js
+
